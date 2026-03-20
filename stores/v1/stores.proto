@@ -2,12 +2,41 @@ syntax = "proto3";
 
 package stores.v1;
 
+import "google/protobuf/descriptor.proto";
+
 option go_package = "github.com/gkwa/heatedhornet/gen/go/stores/v1;storesv1";
 
-message Store {
-  string name = 1;
+extend google.protobuf.EnumValueOptions {
+  string display_name = 50000;
 }
 
-message StoreList {
-  repeated Store stores = 1;
+enum StoreId {
+  STORE_ID_UNSPECIFIED = 0;
+  STORE_ID_AMAZON_FRESH = 1 [(display_name) = "Amazon Fresh"];
+  STORE_ID_AMAZON_COM = 2 [(display_name) = "Amazon.com"];
+  STORE_ID_CENTRAL_CO_OP = 3 [(display_name) = "Central Co-op"];
+  STORE_ID_CHEFS_STORE = 4 [(display_name) = "Chef's Store"];
+  STORE_ID_COSTCO = 5 [(display_name) = "Costco"];
+  STORE_ID_DONG_HING_MARKET = 6 [(display_name) = "Dong Hing Market"];
+  STORE_ID_FRANZ_BAKERY = 7 [(display_name) = "Franz Bakery"];
+  STORE_ID_FRED_MEYER = 8 [(display_name) = "Fred Meyer"];
+  STORE_ID_GROCERY_OUTLET = 9 [(display_name) = "Grocery Outlet"];
+  STORE_ID_H_MART = 10 [(display_name) = "H Mart"];
+  STORE_ID_HAU_HAU_MARKET = 11 [(display_name) = "Hau Hau Market"];
+  STORE_ID_HOME_DEPOT = 12 [(display_name) = "Home Depot"];
+  STORE_ID_INDIA_DEPOT = 13 [(display_name) = "India Depot Indian Grocery, Kitchen & Bakery"];
+  STORE_ID_LAMS_SEAFOOD = 14 [(display_name) = "Lam's Seafood Asian Market"];
+  STORE_ID_LOWES = 15 [(display_name) = "Lowe's"];
+  STORE_ID_M2M = 16 [(display_name) = "M2M"];
+  STORE_ID_PACIFIC_SUPPLY = 17 [(display_name) = "Pacific Supply"];
+  STORE_ID_PCC = 18 [(display_name) = "PCC"];
+  STORE_ID_QFC = 19 [(display_name) = "QFC"];
+  STORE_ID_SAFEWAY = 20 [(display_name) = "Safeway"];
+  STORE_ID_TARGET = 21 [(display_name) = "Target"];
+  STORE_ID_THAN_SON_TOFU = 22 [(display_name) = "Than Son Tofu and Bakery"];
+  STORE_ID_TRADER_JOES = 23 [(display_name) = "Trader Joes"];
+  STORE_ID_UWAJIMAYA = 24 [(display_name) = "Uwajimaya"];
+  STORE_ID_WALGREENS = 25 [(display_name) = "Walgreens"];
+  STORE_ID_WALMART = 26 [(display_name) = "Walmart"];
+  STORE_ID_WHOLE_FOODS = 27 [(display_name) = "Whole Foods"];
 }
