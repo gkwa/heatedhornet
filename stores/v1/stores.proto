@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package stores.v1;
+
+option go_package = "github.com/gkwa/heatedhornet/gen/go/stores/v1;storesv1";
+
+message Store {
+  string name = 1;
+}
+
+message StoreList {
+  repeated Store stores = 1;
+}
