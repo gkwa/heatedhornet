@@ -39,4 +39,5 @@ enum StoreId {
   STORE_ID_WALGREENS = 25 [(display_name) = "Walgreens"];
   STORE_ID_WALMART = 26 [(display_name) = "Walmart"];
   STORE_ID_WHOLE_FOODS = 27 [(display_name) = "Whole Foods"];
+  STORE_ID_ALBERTSONS = 28 [(display_name) = "Albertsons"];
 }
