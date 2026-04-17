@@ -41,4 +41,5 @@ enum StoreId {
   STORE_ID_WHOLE_FOODS = 27 [(display_name) = "Whole Foods"];
   STORE_ID_ALBERTSONS = 28 [(display_name) = "Albertsons"];
   STORE_ID_EAST_AFRICAN_IMPORTS_AND_RESTAURANT = 29 [(display_name) = "East African Imports & Restaurant"];
+  STORE_ID_PUBLIC_STORAGE = 30 [(display_name) = "Public Storage"];
 }
