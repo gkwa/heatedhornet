@@ -8,17 +8,22 @@ consumers get the correct strings via protobuf reflection with no hand-written m
 
 ## adding a store
 
-1. Add a new enum value to stores/v1/stores.proto with a display_name option
-2. git commit
-3. buf push
+Adding a store involves more than editing this repo — all consumers must be updated
+and the Obsidian plugin must be rebuilt or the Shopping list breaks.
+
+Follow the full runbook in the Obsidian vault: "adding a new store.md"
+
+Key rules:
+- Display names must not contain parentheses — Obsidian Bases treats `name_(part)`
+  as a function call in formulas, breaking all Shopping list views
+- Steps: edit proto → push to GitHub + BSR → buf generate in each consumer →
+  reinstall itshire → run rainbowrooster → run itshire → rebuild iridecentibis plugin
 
 ## consumers
 
-- github.com/taylormonacelli/itshire
-- github.com/taylormonacelli/rainbowrooster
-
-Both consume the store list by running buf generate against this module and reading
-display names via reflection at runtime.
+- github.com/taylormonacelli/itshire (Python, adds store sections to vault product files)
+- github.com/taylormonacelli/rainbowrooster (Python, generates product frontmatter + Shopping list.base)
+- github.com/taylormonacelli/iridecentibis (TypeScript Obsidian plugin, implements grocery-check view)
 
 ## development
 
